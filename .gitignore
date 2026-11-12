@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Licensed or security-level data
+data/
+private_data/
+input/
+output/
+outputs/
+**/event_samples/
+*.parquet
+*.feather
+*.pkl
+*.csv.gz
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials*
+token.txt
+
+# Local logs and scratch artifacts
+logs/
+work/
+scratch/
+*.log

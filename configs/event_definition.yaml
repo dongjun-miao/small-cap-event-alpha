@@ -1,0 +1,25 @@
+# Human-readable research contract. Executable definitions live in
+# src/event_alpha/core.py and are covered by tests.
+name: small_cap_volume_regime_shift
+formation_time: after_event_day_close
+size_universe: full_eligible_input_cross_section
+size_rule:
+  method: daily_market_cap_percentile
+  small_max_percentile: 0.3333333333333333
+  microcap_small_max_percentile: 0.1666666666666667
+event_rules:
+  previous_volume_below_lagged_5_session_mean: true
+  previous_volume_to_lagged_20_session_mean_max: 0.8
+  event_volume_to_previous_volume_min: 1.8
+  event_close_position_min: 0.6
+liquidity:
+  adv_window_sessions: 20
+  adv_information_end: t_minus_1
+labels:
+  entry: open_t_plus_1
+  exit: close_t_plus_h
+  horizons_sessions: [5, 10, 20]
+  require_exact_market_session_offsets: true
+  return_type: price_return_not_total_return
+cost_stress_bps: [40, 100]
+capacity_participation_rates: [0.005, 0.01, 0.02]

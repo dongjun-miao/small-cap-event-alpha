@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Proprietary or security-level data
+data/
+output/
+*.parquet
+*.feather
+*.pkl
+
+# Local logs and scratch outputs
+logs/
+work/

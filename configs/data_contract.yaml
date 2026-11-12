@@ -1,0 +1,23 @@
+file_name_pattern: "YYYY-YYYY_research_v1.csv"
+required_columns:
+  permno: stable_security_identifier
+  date: market_session_date
+  mktcap: positive_market_capitalization_input_unit_preserved
+  volume: daily_share_volume
+  open: unadjusted_or_consistently_adjusted_open_price
+  high: same_price_basis_as_open
+  low: same_price_basis_as_open
+  close: same_price_basis_as_open
+optional_columns:
+  ticker: reporting_only
+  exchange: structure_split_reporting
+  shrout: turnover_construction
+preconditions:
+  unique_security_date_rows: true
+  point_in_time_eligibility: supplied_by_private_preprocessing
+  security_type_and_exchange_filters: supplied_by_private_preprocessing
+known_limitations:
+  - dividend_adjustment_not_implemented
+  - delisting_return_not_implemented
+  - input_universe_provenance_not_present_in_public_package
+  - each_period_file_has_independent_20_session_warmup_and_end_censoring
